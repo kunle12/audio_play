@@ -1,0 +1,13 @@
+<launch>
+  <arg name="ns" default="audio"/>
+  <arg name="dst" default="alsasink"/>
+
+  <group ns="$(arg ns)">
+  <node name="audio_play" pkg="audio_play" type="audio_play" output="screen">
+    <param name="dst" value="$(arg dst)"/>
+    <param name="samplerate" type="int" value="96000"/>
+    <param name="channels" type="int" value="1"/>
+    <param name="format" type="str" value="pcm"/>
+  </node>
+  </group>
+</launch>
